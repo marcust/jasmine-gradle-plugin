@@ -2,10 +2,12 @@ import org.apache.tools.ant.filters.*
 
 buildscript {
   repositories {
+     mavenLocal()
      mavenCentral()
   }
   dependencies {
-     classpath "net.sourceforge.purrpackage:maven-oss-gradle-plugin:1.0"
+     classpath "net.sourceforge.purrpackage:maven-oss-gradle-plugin:1.0-mt"
+     classpath "de.huxhorn.gradle:de.huxhorn.gradle.pgp-plugin:0.0.4-SNAPSHOT"
   }
 }
 
@@ -21,7 +23,7 @@ repositories {
 }
 
 dependencies {
-	     compile "junit:junit:3.8.2"
+  compile "junit:junit:3.8.2"
   groovy localGroovy()
   compile "org.codehaus.groovy:groovy:1.7.8"
   compile gradleApi()
